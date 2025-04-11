@@ -27,7 +27,3 @@ async def test_button(callback_query: types.CallbackQuery):
     if callback_query.from_user.id != USER_ID:
         return await callback_query.answer("Доступ запрещён", show_alert=True)
     await callback_query.answer("Кнопка работает!")
-
-if __name__ == "__main__":
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(dp.start_polling())
